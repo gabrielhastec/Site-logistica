@@ -4,28 +4,52 @@ body {
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
+  color: #222;
 }
 
 /* === Navbar === */
 .navbar {
   background-color: #0d1b2a !important;
 }
-
 .navbar-brand {
   color: #ffffff !important;
   font-weight: bold;
 }
-
 .navbar .nav-link {
   color: #ffffff !important;
   margin-left: 10px;
   transition: color 0.3s ease;
 }
-
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
   color: #0077b6 !important;
 }
+
+/* === Barra de redes sociais fixa === */
+.social-bar {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #0d1b2a;
+  border-radius: 0 10px 10px 0;
+  padding: 5px;
+  z-index: 1000;
+}
+.social-bar .social-icon {
+  color: #fff;
+  font-size: 20px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+.social-bar .social-icon.linkedin:hover { background-color: #0077b6; border-radius: 8px; }
+.social-bar .social-icon.instagram:hover { background-color: #e1306c; border-radius: 8px; }
+.social-bar .social-icon.facebook:hover { background-color: #1877f2; border-radius: 8px; }
 
 /* === Hero Section === */
 .hero {
@@ -38,22 +62,18 @@ body {
   text-align: center;
   color: white;
 }
-
 .hero h1 {
   font-size: 3rem;
   font-weight: bold;
 }
-
 .hero p {
   font-size: 1.2rem;
   margin: 20px 0;
 }
-
 .hero .btn-primary {
   background-color: #0077b6;
   border: none;
 }
-
 .hero .btn-primary:hover {
   background-color: #005f8c;
 }
@@ -64,73 +84,94 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: none;
 }
-
 .services .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
-
 .services h5 {
   color: #0077b6;
   font-weight: bold;
 }
 
-/* === Seção Sobre === */
+/* === Sobre === */
 #sobre p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
 
-/* === Formulário de Contato === */
+/* === Formulários === */
+form {
+  width: 100%;
+}
+form .form-control {
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+form .form-control:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
 form .btn-primary {
   background-color: #0077b6;
   border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 form .btn-primary:hover {
   background-color: #005f8c;
+  transform: scale(1.03);
+}
+form .btn-success {
+  background-color: #198754;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+form .btn-success:hover {
+  background-color: #157347;
+  transform: scale(1.03);
 }
 
-/* === Barra compacta de redes sociais fixa === */
-.social-bar {
-  position: fixed;
-  top: 40%;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  background-color: #0d1b2a; /* fundo preto/azul escuro */
-  border-radius: 0 10px 10px 0;
-  padding: 5px;
-  z-index: 1000;
+/* === Cards de Filiais === */
+.filial-card {
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+.filial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* Ícones individuais */
-.social-bar .social-icon {
-  color: #fff;
-  font-size: 18px;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
+/* === Mapa === */
+.mapa iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 0;
 }
-
-/* Cores específicas das redes ao hover */
-.social-bar .social-icon.linkedin:hover { background-color: #0077b6; border-radius: 8px; }
-.social-bar .social-icon.instagram:hover { background-color: #e1306c; border-radius: 8px; }
-.social-bar .social-icon.facebook:hover { background-color: #1877f2; border-radius: 8px; }
-
-/* Espaçamento entre ícones */
-.social-bar .social-icon + .social-icon { margin-top: 5px; }
 
 /* === Footer === */
 footer {
   background-color: #0d1b2a;
-  color: white;
+  color: #fff;
+  font-size: 0.9rem;
   padding: 20px;
   text-align: center;
 }
 
-footer p {
-  margin: 0;
+/* === Responsividade === */
+@media (max-width: 991px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .social-bar {
+    top: 35%;
+  }
 }
