@@ -91,6 +91,38 @@ form .btn-primary:hover {
   background-color: #005f8c;
 }
 
+/* === Barra compacta de redes sociais fixa === */
+.social-bar {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #0d1b2a; /* fundo preto/azul escuro */
+  border-radius: 0 10px 10px 0;
+  padding: 5px;
+  z-index: 1000;
+}
+
+/* Ícones individuais */
+.social-bar .social-icon {
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Cores específicas das redes ao hover */
+.social-bar .social-icon.linkedin:hover { background-color: #0077b6; border-radius: 8px; }
+.social-bar .social-icon.instagram:hover { background-color: #e1306c; border-radius: 8px; }
+.social-bar .social-icon.facebook:hover { background-color: #1877f2; border-radius: 8px; }
+
+/* Espaçamento entre ícones */
+.social-bar .social-icon + .social-icon { margin-top: 5px; }
+
 /* === Footer === */
 footer {
   background-color: #0d1b2a;
